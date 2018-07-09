@@ -14,8 +14,8 @@ export class HeaderComponent implements OnInit {
   }
 
   onSelect(feature: string) {
-    this.featureSelected.emit(feature);
     console.log(`Selected menu item "${feature}"`);
+    this.featureSelected.emit(feature);
   }
 
 }
