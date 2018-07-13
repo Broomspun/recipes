@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
@@ -21,5 +21,15 @@ export class RecipeEditComponent implements OnInit {
           console.log(this.editMode);
         }
       );
+    console.log(this.route.snapshot.queryParams);
+    this.route.queryParams
+      .subscribe( (parms: Params) => {
+        console.log(`queryParms = ${parms['allowedit']}`);
+      });
+    console.log(this.route.snapshot.fragment);
+    this.route.fragment
+      .subscribe( (parms: string) => {
+        console.log(`fragment = ${parms}`);
+      });
   }
 }
